@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
+import Anime from '../views/Anime.vue'
+import PageAnime from '../views/PageAnime.vue'
+import PageAnimeSaga from '../views/PageAnimeSaga'
+import Video from '../views/Video.vue'
 
 Vue.use(VueRouter)
 
@@ -8,18 +12,29 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  }
+    path: '/anime',
+    name: 'anime',
+    component: Anime
+  },
+  {
+    path: '/PageAnime/:name',
+    name: 'PageAnime',
+    component: PageAnime
+  },
+  {
+    path: '/PageAnimeSaga/:name/:saga',
+    name: 'PageAnimeSaga',
+    component: PageAnimeSaga
+  },
+  {
+    path: '/Video/:name',
+    name: 'Video',
+    component: Video
+  },
+
 ]
 
 const router = new VueRouter({
